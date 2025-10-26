@@ -16,8 +16,33 @@
  @use "layouts/home";
 
 
+/* Settings */
+@use "./settings/colors";
+@use "./settings/typography";
 
+/* Tools */
+@use "./tools/functions" as fn;
+@use "./tools/mixins" as mx;
 
-/**
- * Do NOT include anything else in this file!
- */
+/* Generic */
+@use "./generic/reset";
+@use "./elements/base";
+
+/* Objects */
+@use "./objects/layout";
+
+/* Components */
+@use "./components/navbar";
+@use "./components/hero";
+@use "./components/section";
+@use "./components/card";
+@use "./components/carousel";
+@use "./components/stats";
+@use "./components/landmarks";
+@use "./components/testimonials";
+@use "./components/contact";
+@use "./components/footer";
+
+/* Utilities */
+@use "./utilities/helpers";
+

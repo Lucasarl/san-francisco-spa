@@ -1,0 +1,6 @@
+@use "sass:color";
+
+@function contrast-color($bg, $light: #ffffff, $dark: #111111) {
+  @if (color.channel($bg, "lightness", $space: hsl) > 60) { @return $dark; }
+  @return $light;
+}

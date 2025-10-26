@@ -1,0 +1,27 @@
+@use "../settings/colors" as c;
+@use "../settings/typography" as t;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: t.$font-sans;
+  color: c.$ink;
+  background: c.$paper;
+  line-height: 1.6;
+  font-size: t.$fs-400;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: c.$sf-sky;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }

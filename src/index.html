@@ -5,23 +5,378 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>San Francisco - Descubre la Ciudad Dorada</title>
+    <meta name="description" content="Descubre San Francisco: sus barrios únicos, iconos famosos y experiencias inolvidables. Tu guía completa para la Ciudad Dorada.">
   </head>
   <body>
-          <h1>
-        <i class="fa-solid fa-bridge" aria-hidden="true"></i>
-        San Francisco
-      </h1>
+    <!-- Loading Overlay -->
+    <div class="c-loading" id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s ease;">
+      <div class="c-loading__spinner" style="color: white; font-size: 3rem;">
+        <i class="fa-solid fa-bridge fa-spin"></i>
+      </div>
+    </div>
 
-      <p>
-        <i class="fa-solid fa-train-subway" aria-hidden="true"></i>
-        Cómo moverse por la ciudad
-      </p>
 
-      <p>
-        <i class="fa-solid fa-bread-slice" aria-hidden="true"></i>
-        Sourdough imprescindible
-      </p>
+
+    <!-- Navigation -->
+    <header class="c-navbar" id="navbar">
+      <div class="c-navbar__inner o-container">
+        <a class="c-navbar__brand" href="#hero">
+          <i class="fa-solid fa-bridge"></i>
+          San Francisco
+        </a>
+        <button class="c-navbar__toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="c-navbar__nav" id="navMenu">
+          <a href="#hero" class="nav-link">Inicio</a>
+          <a href="#carousel" class="nav-link">Galería</a>
+          <a href="#stats" class="nav-link">Datos</a>
+          <a href="#neighborhoods" class="nav-link">Barrios</a>
+          <a href="#landmarks" class="nav-link">Iconos</a>
+          <a href="#testimonials" class="nav-link">Testimonios</a>
+          <a href="#contact" class="nav-link">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="hero" class="c-hero">
+      <div class="c-hero__background"></div>
+      <div class="o-container c-hero__inner">
+        <div class="c-hero__content">
+          <h1 class="c-hero__title">
+            <span class="c-hero__title-main">Descubre San Francisco</span>
+            <span class="c-hero__title-sub">La Ciudad Dorada te espera</span>
+          </h1>
+          <p class="c-hero__subtitle">Puentes icónicos, colinas legendarias y la magia eterna de la niebla del Pacífico.</p>
+          <div class="c-hero__cta-group">
+            <a class="c-hero__cta c-hero__cta--primary" href="#carousel">
+              <i class="fa-solid fa-camera"></i>
+              Explorar Galería
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <a class="c-hero__cta c-hero__cta--secondary" href="#neighborhoods">
+              <i class="fa-solid fa-map"></i>
+              Ver Barrios
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Image Carousel -->
+    <section id="carousel" class="c-carousel-section">
+      <div class="o-container">
+        <h2 class="c-section__title">Momentos Únicos de San Francisco</h2>
+        <div class="c-carousel" id="imageCarousel">
+          <div class="c-carousel__container">
+            <div class="c-carousel__slide active golden-gate" data-bg="url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+              <div class="c-carousel__content">
+                <h3>Golden Gate Bridge</h3>
+                <p>El icono más famoso de San Francisco, perfecto para ver el atardecer</p>
+              </div>
+            </div>
+            <div class="c-carousel__slide lombard-street" data-bg="url('/assets/images/lombard-street.jpg')">
+              <div class="c-carousel__content">
+                <h3>Lombard Street</h3>
+                <p>La calle más serpenteante del mundo, conocida como "la calle más torcida"</p>
+              </div>
+            </div>
+            <div class="c-carousel__slide painted-ladies" data-bg="url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+              <div class="c-carousel__content">
+                <h3>Painted Ladies</h3>
+                <p>Las casas victorianas más fotografiadas con el skyline de fondo</p>
+              </div>
+            </div>
+            <div class="c-carousel__slide alcatraz" data-bg="url('https://images.unsplash.com/photo-1555997685-9717db7b287c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+              <div class="c-carousel__content">
+                <h3>Alcatraz Island</h3>
+                <p>La famosa prisión federal convertida en fascinante museo</p>
+              </div>
+            </div>
+            <div class="c-carousel__slide cable-car" data-bg="url('https://images.unsplash.com/photo-1571115764283-3ba35d4b2d20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+              <div class="c-carousel__content">
+                <h3>Cable Cars</h3>
+                <p>El sistema de transporte histórico más querido de la ciudad</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Carousel Navigation -->
+          <button class="c-carousel__nav c-carousel__nav--prev" id="carouselPrev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="c-carousel__nav c-carousel__nav--next" id="carouselNext">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          
+          <!-- Carousel Indicators -->
+          <div class="c-carousel__indicators">
+            <button class="c-carousel__indicator active" data-slide="0"></button>
+            <button class="c-carousel__indicator" data-slide="1"></button>
+            <button class="c-carousel__indicator" data-slide="2"></button>
+            <button class="c-carousel__indicator" data-slide="3"></button>
+            <button class="c-carousel__indicator" data-slide="4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="c-stats">
+      <div class="o-container">
+        <div class="c-stats__grid">
+          <div class="c-stats__item">
+            <div class="c-stats__number" data-count="884000" style="color: white; font-size: 3.5rem; font-weight: 900;">884,000</div>
+            <div class="c-stats__label">Habitantes</div>
+          </div>
+          <div class="c-stats__item">
+            <div class="c-stats__number" data-count="43" style="color: white; font-size: 3.5rem; font-weight: 900;">43</div>
+            <div class="c-stats__label">Colinas</div>
+          </div>
+          <div class="c-stats__item">
+            <div class="c-stats__number" data-count="1937" style="color: white; font-size: 3.5rem; font-weight: 900;">1937</div>
+            <div class="c-stats__label">Año del Golden Gate</div>
+          </div>
+          <div class="c-stats__item">
+            <div class="c-stats__number" data-count="25" style="color: white; font-size: 3.5rem; font-weight: 900;">25</div>
+            <div class="c-stats__label">Millones de turistas/año</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neighborhoods Section -->
+    <section id="neighborhoods" class="c-section">
+      <div class="o-container">
+        <h2 class="c-section__title">Barrios Imprescindibles</h2>
+        <p class="c-section__subtitle">Cada distrito cuenta una historia única</p>
+        <div class="o-grid o-grid--3">
+          <article class="c-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="c-card__image">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h3 class="c-card__title">Mission</h3>
+            <p class="c-card__meta">Arte urbano y gastronomía</p>
+            <p class="c-card__body">Murales en Balmy Alley, Dolores Park y las mejores taquerías de la ciudad.</p>
+            <a href="#" class="c-card__link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="c-card c-card--highlight" data-aos="fade-up" data-aos-delay="200">
+            <div class="c-card__image">
+              <i class="fa-solid fa-torii-gate"></i>
+            </div>
+            <h3 class="c-card__title">Chinatown</h3>
+            <p class="c-card__meta">Tradición milenaria</p>
+            <p class="c-card__body">El Chinatown más antiguo de EE.UU. con auténtico dim sum y cultura ancestral.</p>
+            <a href="#" class="c-card__link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="c-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="c-card__image">
+              <i class="fa-solid fa-wine-glass"></i>
+            </div>
+            <h3 class="c-card__title">North Beach</h3>
+            <p class="c-card__meta">Pequeña Italia</p>
+            <p class="c-card__body">Cafés históricos, City Lights Bookstore y la emblemática Coit Tower.</p>
+            <a href="#" class="c-card__link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Landmarks Section -->
+    <section id="landmarks" class="c-landmarks">
+      <div class="o-container">
+        <h2 class="c-section__title">Iconos de la Ciudad</h2>
+        <div class="c-landmarks__grid">
+          <div class="c-landmark" data-aos="zoom-in">
+            <div class="c-landmark__icon">
+              <i class="fa-solid fa-bridge"></i>
+            </div>
+            <h3>Golden Gate Bridge</h3>
+            <p>Símbolo mundial de ingeniería y belleza</p>
+          </div>
+          <div class="c-landmark" data-aos="zoom-in" data-aos-delay="100">
+            <div class="c-landmark__icon">
+              <i class="fa-solid fa-train"></i>
+            </div>
+            <h3>Cable Cars</h3>
+            <p>Patrimonio histórico en movimiento</p>
+          </div>
+          <div class="c-landmark" data-aos="zoom-in" data-aos-delay="200">
+            <div class="c-landmark__icon">
+              <i class="fa-solid fa-mountain"></i>
+            </div>
+            <h3>Lombard Street</h3>
+            <p>La calle más serpenteante del mundo</p>
+          </div>
+          <div class="c-landmark" data-aos="zoom-in" data-aos-delay="300">
+            <div class="c-landmark__icon">
+              <i class="fa-solid fa-building-shield"></i>
+            </div>
+            <h3>Alcatraz</h3>
+            <p>La prisión más famosa de América</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="c-testimonials">
+      <div class="o-container">
+        <h2 class="c-section__title">Lo que dicen los visitantes</h2>
+        <div class="c-testimonials__grid">
+          <div class="c-testimonial" data-aos="fade-left">
+            <div class="c-testimonial__content">
+              <p>"San Francisco es una ciudad que te enamora desde el primer momento. Sus colinas, la niebla y esa energía única hacen que quieras quedarte para siempre."</p>
+            </div>
+            <div class="c-testimonial__author">
+              <div class="c-testimonial__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="c-testimonial__info">
+                <h4>María González</h4>
+                <span>Viajera española</span>
+              </div>
+            </div>
+          </div>
+          <div class="c-testimonial" data-aos="fade-left" data-aos-delay="200">
+            <div class="c-testimonial__content">
+              <p>"Cada barrio es un mundo diferente. La diversidad cultural y gastronómica de San Francisco es simplemente increíble. ¡Ya estoy planeando mi próxima visita!"</p>
+            </div>
+            <div class="c-testimonial__author">
+              <div class="c-testimonial__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="c-testimonial__info">
+                <h4>Carlos Ruiz</h4>
+                <span>Fotógrafo profesional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="c-contact">
+      <div class="o-container">
+        <div class="c-contact__grid">
+          <div class="c-contact__info">
+            <h2>¿Listo para tu aventura?</h2>
+            <p>Contacta con nosotros para planificar tu viaje perfecto a San Francisco</p>
+            <div class="c-contact__details">
+              <div class="c-contact__item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>example@email.com</span>
+              </div>
+              <div class="c-contact__item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+1 (415) 111-1111</span>
+              </div>
+              <div class="c-contact__item">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+          </div>
+          <form class="c-contact__form" id="contactForm">
+            <div class="c-form__group">
+              <input type="text" id="name" name="name" required>
+              <label for="name">Nombre</label>
+            </div>
+            <div class="c-form__group">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="c-form__group">
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Mensaje</label>
+            </div>
+            <button type="submit" class="c-form__submit">
+              <span>Enviar mensaje</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+      <div class="o-container">
+        <div class="c-footer__content">
+          <div class="c-footer__brand">
+            <h3>
+              <i class="fa-solid fa-bridge"></i>
+              San Francisco Guide
+            </h3>
+            <p>Tu compañero perfecto para descubrir la Ciudad Dorada</p>
+          </div>
+          <div class="c-footer__links">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+              <li><a href="#neighborhoods">Barrios</a></li>
+              <li><a href="#landmarks">Iconos</a></li>
+              <li><a href="#testimonials">Testimonios</a></li>
+              <li><a href="#contact">Contacto</a></li>
+              <li><a href="#hero">Volver arriba</a></li>
+            </ul>
+          </div>
+          <div class="c-footer__social">
+            <h4>Síguenos</h4>
+            <div class="c-footer__social-links">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="c-footer__bottom">
+          <p>&copy; 2025 San Francisco Guide. Hecho con <i class="fa-solid fa-heart"></i> en España</p>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Emergency loading screen removal -->
+    <script>
+      // Immediate loading screen removal
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var loading = document.getElementById('loading');
+          if (loading) {
+            loading.style.opacity = '0';
+            setTimeout(function() {
+              loading.style.display = 'none';
+            }, 500);
+          }
+        }, 800);
+      });
+
+      // Fallback removal after 2 seconds
+      setTimeout(function() {
+        var loading = document.getElementById('loading');
+        if (loading && loading.style.display !== 'none') {
+          loading.style.display = 'none';
+        }
+      }, 2000);
+
+
+    </script>
+
     <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>

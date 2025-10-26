@@ -1,0 +1,20 @@
+@use "../settings/typography" as t;
+@use "../tools/mixins" as mx;
+
+.c-section {
+  @include mx.full-width;
+  padding-block: clamp(2rem, 5vw, 4rem);
+  scroll-margin-top: 80px;
+
+  &__title {
+    font-size: t.$fs-800;
+    margin-bottom: t.$space-2;
+    line-height: 1.2;
+  }
+
+  &__lead {
+    font-size: t.$fs-500;
+    opacity: .9;
+    margin-bottom: t.$space-3;
+  }
+}

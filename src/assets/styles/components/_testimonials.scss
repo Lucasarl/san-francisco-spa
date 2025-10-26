@@ -1,0 +1,151 @@
+/* =======================
+   Testimonials Component
+   ======================= */
+@use "../tools/mixins" as mx;
+
+.c-testimonials {
+  @include mx.full-width;
+  padding: 5rem 0;
+  background: #f8f9fa;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.05) 100%);
+  }
+
+  .c-section__title {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+}
+
+.c-testimonial {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 2rem;
+    font-size: 4rem;
+    color: #667eea;
+    font-family: serif;
+    line-height: 1;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+      font-style: italic;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__author {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem;
+    margin-top: auto !important;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    h4 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: #667eea;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Animation for testimonials */
+.c-testimonial {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease;
+
+  &.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .c-testimonial {
+    padding: 2rem;
+
+    &::before {
+      font-size: 3rem;
+      top: -5px;
+      left: 1.5rem;
+    }
+
+    &__content p {
+      font-size: 1rem;
+    }
+
+    &__avatar {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+  }
+}

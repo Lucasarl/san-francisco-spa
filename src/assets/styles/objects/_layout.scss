@@ -1,0 +1,17 @@
+@use "../tools/mixins" as mx;
+@use "../settings/typography" as t;
+
+.o-container { @include mx.container(1100px, t.$space-2); }
+
+.o-grid {
+  display: grid;
+  gap: t.$space-2;
+}
+
+.o-grid--2 { grid-template-columns: 1fr; }
+.o-grid--3 { grid-template-columns: 1fr; }
+
+@include mx.respond(md) {
+  .o-grid--2 { grid-template-columns: 1fr 1fr; }
+  .o-grid--3 { grid-template-columns: repeat(3, 1fr); }
+}

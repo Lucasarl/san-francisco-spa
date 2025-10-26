@@ -1,0 +1,8 @@
+/* Box sizing, margin reset básico */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body, h1, h2, h3, h4, p, ul, ol { margin: 0; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+img { max-width: 100%; display: block; }
