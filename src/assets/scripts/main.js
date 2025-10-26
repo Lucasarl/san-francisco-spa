@@ -9,7 +9,7 @@
 /**
  * Write any other JavaScript below
  */
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
 +( function() {
   const university = "UOC";
   console.log(`Hello, ${university}!`);

@@ -17,6 +17,12 @@ body {
   color: variables.$uoc-corporate;
 }
 
+.fa-solid, .fa-regular, .fa-brands {
+  font-size: 4rem;
+  vertical-align: middle;
+  margin-right: .5rem;
+}
+
 .uoc-container {
   max-width: 800px;
   margin: auto;
