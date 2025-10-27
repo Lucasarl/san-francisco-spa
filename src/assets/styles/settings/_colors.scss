@@ -1,10 +1,9 @@
 $sf-sky: #2ea8df;
 $sf-fog: #e6eef2;
 $sf-gold: #ffb000;
-
 $ink: #0f172a;     // texto principal
 $ink-2: #334155;   // texto secundario
-$paper: #ffffff;   // fondo
+$paper: #fff;   // fondo
 
 $border-weak: rgba($ink, 0.08);
-$shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.07);
+$shadow-soft: 0 6px 20px rgb(0 0 0 / 0.07);

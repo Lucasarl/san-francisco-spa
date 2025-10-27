@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-clean-order"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    
+    "selector-class-pattern": [
+      "^(o|c|u|is|has)-[a-z0-9]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$",
+      {
+        "message": "Usa BEM con prefijos ITCSS: o-|c-|u-|is-|has- y kebab-case."
+      }
+    ],
+
+    
+    "scss/at-use-no-unnamespaced": null,
+
+    
+    "no-descending-specificity": null,
+    "selector-max-id": 0,
+
+    
+    "color-hex-length": "short",
+    "alpha-value-notation": "number",
+    "function-url-quotes": "always",
+    
+    "keyframes-name-pattern": "^[a-z]+(?:-[a-z]+)*$",
+    
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true
+  }
+}

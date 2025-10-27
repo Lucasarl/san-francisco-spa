@@ -2,36 +2,36 @@
 .u-center { text-align: center !important; }
 .u-mt-2 { margin-top: 1rem !important; }
 .u-mb-2 { margin-bottom: 1rem !important; }
-.is-active { outline: 2px solid rgba(0,0,0,0.3); } /* ejemplo de estado */
+.is-active { outline: 2px solid rgb(0 0 0 / 0.3); } /* ejemplo de estado */
 
 /* Animation utilities */
-.fade-in {
+.u-fade-in {
   opacity: 0;
-  animation: fadeIn 0.6s ease-out forwards;
+  animation: fade-in 0.6s ease-out forwards;
 }
 
-.slide-up {
+.u-slide-up {
   transform: translateY(30px);
   opacity: 0;
-  animation: slideUp 0.6s ease-out forwards;
+  animation: slide-up 0.6s ease-out forwards;
 }
 
-.slide-in-left {
+.u-slide-in-left {
   transform: translateX(-30px);
   opacity: 0;
-  animation: slideInLeft 0.6s ease-out forwards;
+  animation: slide-in-left 0.6s ease-out forwards;
 }
 
-.slide-in-right {
+.u-slide-in-right {
   transform: translateX(30px);
   opacity: 0;
-  animation: slideInRight 0.6s ease-out forwards;
+  animation: slide-in-right 0.6s ease-out forwards;
 }
 
-.zoom-in {
+.u-zoom-in {
   transform: scale(0.8);
   opacity: 0;
-  animation: zoomIn 0.6s ease-out forwards;
+  animation: zoom-in 0.6s ease-out forwards;
 }
 
 /* Smooth scrolling */
@@ -49,8 +49,8 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
 
   &:hover {
     background: linear-gradient(135deg, #5a6fd8, #6a4190);
@@ -59,44 +59,39 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: rgba(102, 126, 234, 0.2);
   color: #333;
-}
-
-::-moz-selection {
-  background: rgba(102, 126, 234, 0.2);
-  color: #333;
+  background: rgb(102 126 234 / 0.2);
 }
 
 /* Keyframes */
-@keyframes fadeIn {
+@keyframes fade-in {
   to {
     opacity: 1;
   }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-@keyframes slideInLeft {
+@keyframes slide-in-left {
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-@keyframes slideInRight {
+@keyframes slide-in-right {
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-@keyframes zoomIn {
+@keyframes zoom-in {
   to {
     transform: scale(1);
     opacity: 1;
@@ -125,7 +120,7 @@ html {
   transform: scale(0.8);
 }
 
-[data-aos].animate {
-  opacity: 1;
+[data-aos].is-animate {
   transform: translateY(0) translateX(0) scale(1);
+  opacity: 1;
 }

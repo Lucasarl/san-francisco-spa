@@ -7,58 +7,67 @@
 body {
   display: flex;
   flex-direction: column;
+
   height: 100vh;
   margin: 0;
   padding: 2rem;
+
   font-family: variables.$font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: variables.$uoc-bg;
   color: variables.$uoc-corporate;
+
+  background-color: variables.$uoc-bg;
 }
 
-.fa-solid, .fa-regular, .fa-brands {
+// Estilos para iconos Font Awesome (sistema externo)
+/* stylelint-disable-next-line selector-class-pattern */
+[class*="fa-"] {
+  margin-right: .5rem;
   font-size: 4rem;
   vertical-align: middle;
-  margin-right: .5rem;
 }
 
-.uoc-container {
+/* Contenedor específico para UOC */
+.o-uoc-container {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
   border-radius: 2rem;
+
   text-align: center;
+
   background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -1px rgb(0 0 0 / 0.06);
 }
 
-.uoc-logo {
+.o-logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
+
   max-width: 200px;
   height: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
 
-  @media (min-width: variables.$mqMinWidth) {
+  @media (min-width: variables.$mq-min-width) {
     max-width: none;
   }
 }
 
-.uoc-title {
+.o-title {
   font-family: variables.$font-family-serif;
   font-size: 24px;
   font-weight: 700;
   color: variables.$uoc-corporate;
 
-  @media (min-width: variables.$mqMinWidth) {
+  @media (min-width: variables.$mq-min-width) {
     font-size: 36px;
   }
 }
 
-.uoc-footer {
+.o-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
   text-align: center;

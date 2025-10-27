@@ -31,7 +31,7 @@ class SanFranciscoApp {
     const loading = document.getElementById('loading');
     if (loading) {
       setTimeout(() => {
-        loading.classList.add('hide');
+        loading.classList.add('is-hidden');
         setTimeout(() => {
           loading.style.display = 'none';
         }, 500);
@@ -41,8 +41,8 @@ class SanFranciscoApp {
     // Fallback: Hide loading screen after window load
     window.addEventListener('load', () => {
       const loading = document.getElementById('loading');
-      if (loading && !loading.classList.contains('hide')) {
-        loading.classList.add('hide');
+      if (loading && !loading.classList.contains('is-hidden')) {
+        loading.classList.add('is-hidden');
         setTimeout(() => {
           loading.style.display = 'none';
         }, 500);
@@ -142,7 +142,7 @@ class SanFranciscoApp {
       const bgUrl = slide.getAttribute('data-bg');
       if (bgUrl) {
         // Set background image if not already set by CSS class
-        if (!slide.classList.contains('lombard-street') && !slide.classList.contains('golden-gate') && !slide.classList.contains('painted-ladies') && !slide.classList.contains('alcatraz') && !slide.classList.contains('cable-car')) {
+        if (!slide.classList.contains('c-lombard-street') && !slide.classList.contains('c-golden-gate') && !slide.classList.contains('c-painted-ladies') && !slide.classList.contains('c-alcatraz') && !slide.classList.contains('c-cable-car')) {
           slide.style.backgroundImage = bgUrl;
         }
       }
@@ -153,16 +153,16 @@ class SanFranciscoApp {
       isAnimating = true;
 
       // Remove active classes
-      slides.forEach(slide => slide.classList.remove('active', 'prev'));
-      indicators.forEach(indicator => indicator.classList.remove('active'));
+      slides.forEach(slide => slide.classList.remove('is-active', 'is-prev'));
+      indicators.forEach(indicator => indicator.classList.remove('is-active'));
 
       const prevSlide = currentSlide;
       currentSlide = index;
 
       // Add classes
-      if (slides[prevSlide]) slides[prevSlide].classList.add('prev');
-      if (slides[currentSlide]) slides[currentSlide].classList.add('active');
-      if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
+      if (slides[prevSlide]) slides[prevSlide].classList.add('is-prev');
+      if (slides[currentSlide]) slides[currentSlide].classList.add('is-active');
+      if (indicators[currentSlide]) indicators[currentSlide].classList.add('is-active');
 
       setTimeout(() => {
         isAnimating = false;
@@ -214,7 +214,7 @@ class SanFranciscoApp {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add('is-animate');
           }
         });
       }, observerOptions);
@@ -230,7 +230,7 @@ class SanFranciscoApp {
       // Fallback: Add animate class to all elements immediately
       const animatedElements = document.querySelectorAll('[data-aos], .c-card, .c-landmark, .c-testimonial, .c-stats__item');
       animatedElements.forEach(el => {
-        if (el) el.classList.add('animate');
+        if (el) el.classList.add('is-animate');
       });
     }
   }

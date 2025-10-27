@@ -3,18 +3,19 @@
 
 .c-section {
   @include mx.full-width;
-  padding-block: clamp(2rem, 5vw, 4rem);
+
   scroll-margin-top: 80px;
+  padding-block: clamp(2rem, 5vw, 4rem);
 
   &__title {
-    font-size: t.$fs-800;
     margin-bottom: t.$space-2;
+    font-size: t.$fs-800;
     line-height: 1.2;
   }
 
   &__lead {
+    margin-bottom: t.$space-3;
     font-size: t.$fs-500;
     opacity: .9;
-    margin-bottom: t.$space-3;
   }
 }

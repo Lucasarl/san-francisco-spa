@@ -5,9 +5,10 @@
 
 .c-footer {
   @include mx.full-width;
-  background: #1a202c;
+
+  padding: 3rem 0 1rem;
   color: white;
-  padding: 3rem 0 1rem 0;
+  background: #1a202c;
 
   &__content {
     display: grid;
@@ -15,12 +16,12 @@
     gap: 4rem;
     margin-bottom: 2rem;
 
-    @media (max-width: 968px) {
+    @media (width <= 968px) {
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
     }
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       grid-template-columns: 1fr;
       gap: 2rem;
       text-align: center;
@@ -29,9 +30,9 @@
 
   &__brand {
     h3 {
+      margin-bottom: 1rem;
       font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 1rem;
       color: #667eea;
 
       i {
@@ -40,24 +41,24 @@
     }
 
     p {
-      color: #a0aec0;
-      line-height: 1.6;
       margin: 0;
+      line-height: 1.6;
+      color: #a0aec0;
     }
   }
 
   &__links {
     h4 {
+      margin-bottom: 1rem;
       font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 1rem;
       color: #e2e8f0;
     }
 
     ul {
-      list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      list-style: none;
 
       li {
         margin-bottom: 0.5rem;
@@ -80,9 +81,9 @@
     padding: 0 1rem;
     
     h4 {
+      margin-bottom: 1.5rem;
       font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
       color: #e2e8f0;
     }
 
@@ -91,35 +92,35 @@
       gap: 2rem;
       align-items: center;
 
-      @media (max-width: 768px) {
-        justify-content: center;
-        gap: 1.5rem;
-      }
-
       a {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
-        min-height: 36px;
-        border-radius: 50%;
-        background: #2d3748;
-        color: #a0aec0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        flex-shrink: 0;
-        flex-grow: 0;
-        margin: 0 0.5rem;
-        box-sizing: border-box;
         position: relative;
 
+        display: inline-flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+
+        font-size: 0.9rem;
+        color: #a0aec0;
+        text-decoration: none;
+
+        background: #2d3748;
+
+        transition: all 0.3s ease;
+
         &:hover {
-          background: #667eea;
-          color: white;
           transform: translateY(-2px);
+          color: white;
+          background: #667eea;
         }
 
         &:first-child {
@@ -130,26 +131,32 @@
           margin-right: 0;
         }
 
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
           width: 32px;
-          height: 32px;
           min-width: 32px;
+          height: 32px;
           min-height: 32px;
-          font-size: 0.8rem;
           margin: 0 0.4rem;
+
+          font-size: 0.8rem;
         }
+      }
+
+      @media (width <= 768px) {
+        gap: 1.5rem;
+        justify-content: center;
       }
     }
   }
 
   &__bottom {
-    border-top: 1px solid #2d3748;
     padding-top: 2rem;
+    border-top: 1px solid #2d3748;
     text-align: center;
 
     p {
-      color: #a0aec0;
       margin: 0;
+      color: #a0aec0;
 
       i {
         color: #e53e3e;
@@ -164,40 +171,45 @@
 
 .c-loading {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  opacity: 1;
-  visibility: visible;
 
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
+  width: 100%;
+  height: 100vh;
+
+  visibility: visible;
+  opacity: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  &.is-hidden {
     pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
   }
 
   &__spinner {
-    color: white;
     font-size: 3rem;
+    color: white;
     animation: pulse 1.5s ease-in-out infinite;
   }
 }
 
 @keyframes pulse {
   0%, 100% {
-    opacity: 1;
     transform: scale(1);
+    opacity: 1;
   }
+
   50% {
-    opacity: 0.7;
     transform: scale(1.1);
+    opacity: 0.7;
   }
 }
 

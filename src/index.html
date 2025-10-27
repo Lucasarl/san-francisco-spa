@@ -45,7 +45,7 @@
     <!-- Hero Section -->
     <main id="hero" class="c-hero">
       <div class="c-hero__background"></div>
-      <div class="o-container c-hero__inner">
+      <div class="c-hero__inner">
         <div class="c-hero__content">
           <h1 class="c-hero__title">
             <span class="c-hero__title-main">Descubre San Francisco</span>
@@ -56,7 +56,7 @@
             <a class="c-hero__cta c-hero__cta--primary" href="#carousel">
               <i class="fa-solid fa-camera"></i>
               Explorar Galería
-              <i class="fa-solid fa-chevron-down"></i>
+              <i class="fa-solid fa-chevron-down c-hero__icon"></i>
             </a>
             <a class="c-hero__cta c-hero__cta--secondary" href="#neighborhoods">
               <i class="fa-solid fa-map"></i>
@@ -73,31 +73,31 @@
         <h2 class="c-section__title">Momentos Únicos de San Francisco</h2>
         <div class="c-carousel" id="imageCarousel">
           <div class="c-carousel__container">
-            <div class="c-carousel__slide active golden-gate" data-bg="url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+            <div class="c-carousel__slide is-active c-golden-gate" data-bg="url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
               <div class="c-carousel__content">
                 <h3>Golden Gate Bridge</h3>
                 <p>El icono más famoso de San Francisco, perfecto para ver el atardecer</p>
               </div>
             </div>
-            <div class="c-carousel__slide lombard-street" data-bg="url('/assets/images/lombard-street.jpg')">
+            <div class="c-carousel__slide c-lombard-street" data-bg="url('/assets/images/lombard-street.jpg')">
               <div class="c-carousel__content">
                 <h3>Lombard Street</h3>
                 <p>La calle más serpenteante del mundo, conocida como "la calle más torcida"</p>
               </div>
             </div>
-            <div class="c-carousel__slide painted-ladies" data-bg="url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+            <div class="c-carousel__slide c-painted-ladies" data-bg="url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
               <div class="c-carousel__content">
                 <h3>Painted Ladies</h3>
                 <p>Las casas victorianas más fotografiadas con el skyline de fondo</p>
               </div>
             </div>
-            <div class="c-carousel__slide alcatraz" data-bg="url('https://images.unsplash.com/photo-1555997685-9717db7b287c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+            <div class="c-carousel__slide c-alcatraz" data-bg="url('https://images.unsplash.com/photo-1555997685-9717db7b287c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
               <div class="c-carousel__content">
                 <h3>Alcatraz Island</h3>
                 <p>La famosa prisión federal convertida en fascinante museo</p>
               </div>
             </div>
-            <div class="c-carousel__slide cable-car" data-bg="url('https://images.unsplash.com/photo-1571115764283-3ba35d4b2d20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+            <div class="c-carousel__slide c-cable-car" data-bg="url('https://images.unsplash.com/photo-1571115764283-3ba35d4b2d20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
               <div class="c-carousel__content">
                 <h3>Cable Cars</h3>
                 <p>El sistema de transporte histórico más querido de la ciudad</p>
@@ -115,7 +115,7 @@
           
           <!-- Carousel Indicators -->
           <div class="c-carousel__indicators">
-            <button class="c-carousel__indicator active" data-slide="0"></button>
+            <button class="c-carousel__indicator is-active" data-slide="0"></button>
             <button class="c-carousel__indicator" data-slide="1"></button>
             <button class="c-carousel__indicator" data-slide="2"></button>
             <button class="c-carousel__indicator" data-slide="3"></button>

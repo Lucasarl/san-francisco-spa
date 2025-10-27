@@ -2,21 +2,35 @@
 
 @mixin container($max: 1100px, $pad: 1rem) {
   max-width: $max;
-  padding-inline: $pad;
   margin-inline: auto;
+  padding-inline: $pad;
 }
 
 @mixin full-width {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
   box-sizing: border-box;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == sm { @media (min-width: ty.$bp-sm) { @content; } }
-  @else if $breakpoint == md { @media (min-width: ty.$bp-md) { @content; } }
-  @else if $breakpoint == lg { @media (min-width: ty.$bp-lg) { @content; } }
+  @if $breakpoint == sm {
+    @media (min-width: ty.$bp-sm) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (min-width: ty.$bp-md) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (min-width: ty.$bp-lg) {
+      @content;
+    }
+  }
 }

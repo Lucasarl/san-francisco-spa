@@ -5,31 +5,32 @@
 
 .c-contact {
   @include mx.full-width;
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
+
   position: relative;
+  padding: 5rem 0;
+  color: white;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 
   &::before {
     content: '';
+
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,100 100,0 100,100" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat;
     background-size: cover;
   }
 
   &__grid {
+    position: relative;
+    z-index: 2;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
-    position: relative;
-    z-index: 2;
 
-    @media (max-width: 968px) {
+    @media (width <= 968px) {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
@@ -37,23 +38,25 @@
 
   &__info {
     h2 {
+      margin-bottom: 1rem;
+
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+
       background: linear-gradient(45deg, #fff, #f8f9fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
 
-      @media (max-width: 768px) {
+      -webkit-text-fill-color: transparent;
+
+      @media (width <= 768px) {
         font-size: 2rem;
       }
     }
 
     p {
+      margin-bottom: 2rem;
       font-size: 1.2rem;
       line-height: 1.6;
-      margin-bottom: 2rem;
       opacity: 0.9;
     }
   }
@@ -66,25 +69,28 @@
 
   &__item {
     display: flex;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
+
     padding: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.2);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
+
+    background: rgb(255 255 255 / 0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+
     transition: all 0.3s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.15);
       transform: translateX(10px);
+      background: rgb(255 255 255 / 0.15);
     }
 
     i {
       width: 24px;
-      text-align: center;
-      color: #667eea;
       font-size: 1.2rem;
+      color: #667eea;
+      text-align: center;
     }
 
     span {
@@ -94,14 +100,15 @@
   }
 
   &__form {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    border-radius: 20px;
 
-    @media (max-width: 768px) {
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 0.1);
+
+    @media (width <= 768px) {
       padding: 2rem;
     }
   }
@@ -116,44 +123,51 @@
     input,
     textarea {
       width: 100%;
-      padding: 1.2rem 1rem 0.8rem 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 1.2rem 1rem 0.8rem;
+      border: 2px solid rgb(255 255 255 / 0.2);
       border-radius: 10px;
-      color: white;
+
       font-size: 1rem;
-      transition: all 0.3s ease;
+      color: white;
+
+      background: rgb(255 255 255 / 0.1);
       backdrop-filter: blur(10px);
 
-      &:focus {
-        outline: none;
-        border-color: #667eea;
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-      }
+      transition: all 0.3s ease;
 
       &::placeholder {
         color: transparent;
+      }
+
+      &:focus {
+        border-color: #667eea;
+        background: rgb(255 255 255 / 0.15);
+        outline: none;
+        box-shadow: 0 0 0 3px rgb(102 126 234 / 0.2);
       }
 
       &:focus + label,
       &:not(:placeholder-shown) + label {
         top: 0.5rem;
         font-size: 0.8rem;
-        color: #667eea;
         font-weight: 600;
+        color: #667eea;
       }
     }
 
     label {
+      pointer-events: none;
+
       position: absolute;
       top: 1.2rem;
       left: 1rem;
-      color: rgba(255, 255, 255, 0.7);
+
       font-size: 1rem;
-      transition: all 0.3s ease;
-      pointer-events: none;
+      color: rgb(255 255 255 / 0.7);
+
       background: transparent;
+
+      transition: all 0.3s ease;
     }
 
     textarea {
@@ -164,43 +178,53 @@
   }
 
   &__submit {
-    width: 100%;
-    padding: 1.2rem 2rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+
     position: relative;
+
     overflow: hidden;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+
+      background: rgb(255 255 255 / 0.2);
+
+      transition: all 0.3s ease;
+    }
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 10px 30px rgb(102 126 234 / 0.3);
     }
 
     &:active {
       transform: translateY(0);
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
     }
 
     &:hover::before {
@@ -217,7 +241,7 @@
 }
 
 /* Loading state */
-.c-form__submit.loading {
+.c-form__submit.is-loading {
   pointer-events: none;
 
   span {
